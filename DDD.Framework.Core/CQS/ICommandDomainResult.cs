@@ -1,12 +1,11 @@
-﻿using DDD.Framework.Core.Validation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 
 namespace DDD.Framework.Core.CQS
 {
-    interface ICommandDomainResult<T> where T : IEvent
+    public interface ICommandDomainResult<T> where T : IEvent
     {
         T Result { get; }
         bool HasBeenDenied { get; }

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DDD.Framework.Core.CQS
+﻿namespace DDD.Framework.Core.CQS
 {
-    public interface ICommandHandler<T> where T : ICommand
+    public interface ICommandHandler<TCommand,TEvent> 
+        where TCommand : ICommand
+        where TEvent: IEvent
     {
-        void Handle(T command);
+        ICommandDomainResult<TEvent> Handle(TCommand command);
     }
 }
